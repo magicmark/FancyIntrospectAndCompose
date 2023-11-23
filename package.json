@@ -1,0 +1,59 @@
+{
+    "name": "fancy-introspect-and-compose",
+    "version": "0.0.1",
+    "description": "Fancier version of Apollo Server's IntrospectAndCompose",
+    "type": "module",
+    "scripts": {
+        "build": "tsup-node src --dts --format esm,cjs --out-dir lib",
+        "prettier": "prettier src tests testing --write",
+        "test:jest": "NODE_OPTIONS=--experimental-vm-modules jest",
+        "test:typecheck": "tsup-node src testing --dts-only && rm -rf dist",
+        "test:prettier": "prettier src tests testing --check",
+        "test": "npm-run-all -s 'test:*'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/magicmark/FancyIntrospectAndCompose.git"
+    },
+    "keywords": [
+        "apollo",
+        "graphql",
+        "federation"
+    ],
+    "exports": {
+        ".": {
+            "require": "./lib/index.cjs",
+            "import": "./lib/index.js",
+            "types": "./lib/index.d.ts"
+        }
+    },
+    "types": "./lib/index.d.ts",
+    "author": "Mark Larah <mark@larah.me>",
+    "license": "MIT",
+    "files": [
+        "lib"
+    ],
+    "devDependencies": {
+        "@apollo/gateway": "2.x",
+        "@apollo/server": "4.x",
+        "@apollo/subgraph": "2.x",
+        "@tsconfig/node18": "18.x",
+        "@tsconfig/strictest": "2.x",
+        "@types/jest": "29.x",
+        "@types/node": "29.x",
+        "get-port": "7.x",
+        "graphql": "16.x",
+        "graphql-tag": "2.x",
+        "jest": "29.x",
+        "npm-run-all": "4.x",
+        "prettier": "3.x",
+        "ts-jest": "29.x",
+        "tsup": "7.x",
+        "typescript": "5.x",
+        "url-join": "5.x",
+        "wait-for-expect": "3.x"
+    },
+    "peerDependencies": {
+        "@apollo/gateway": "2.x"
+    }
+}
