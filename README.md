@@ -31,7 +31,7 @@ new ApolloGateway({
         staticSubgraphs: [
             {
                 name: 'subgraph_bar',
-                sdl: fs.readFileSync('/path/to/schema.graphql'),
+                sdl: fs.readFileSync('/path/to/bar.graphql'),
             },
         ],
     }),
@@ -48,7 +48,7 @@ https://www.apollographql.com/docs/apollo-server/using-federation/api/apollo-gat
 
 ### Additional Options
 
-`FancyIntrospectAndCompose` also accepts the following additional constructor options:
+`FancyIntrospectAndCompose` accepts the following additional constructor options:
 
 | parameter         | type                                                            | description                                                     |
 | ----------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
